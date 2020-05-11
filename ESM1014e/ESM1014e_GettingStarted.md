@@ -109,9 +109,9 @@ As figure below:
 
 -   After what you have done in [Prepare the Device](#preparethedevice), 
     you should find a new device is already provisioned in your Azure IoT Cnetral App automatically.
-![Provisioned](ESM1014e/png/PPB_Provisioned.png)
+![Provisioned](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/PPB_Provisioned.png)
 -   An sample view as below
-![View](ESM1014e/png/PPB_View.png)
+![View](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/PPB_View.png)
 -   Use this [Quickstart: Add a simulated device to your IoT Central application](https://docs.microsoft.com/en-us/azure/iot-central/core/quick-create-simulated-device) 
     doc as an example to try Power Probe in your Azure IoT Central App.
 
