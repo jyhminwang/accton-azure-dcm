@@ -69,7 +69,7 @@ As figure below:
 -   Connect Current Transformer to Probe's CT.L1+/CT.L1-. Please pay attention to the direction of current flow. It should be marked on the current transformer.
 -   Connect Probe's Volt.Line1/Volt.Neutral to the L/N of the power cable respectively. The power cable supplies the load we plan to monitor.
 -   You can reboot Power Probe by pressing button "B".
-![PPBe basic connecion](ESM1014e/png/ESM1014e_basic.png)
+![PPBe basic connecion](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/ESM1014e_basic.png)
 
 **Software Environmental Setup**
 1. Get your Probe's connection details
