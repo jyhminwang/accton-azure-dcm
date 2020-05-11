@@ -70,7 +70,7 @@ As figure below:
 -   Connect Probe's Volt.Line1/Volt.Neutral to the L/N of the power cable respectively. The power cable supplies the load we plan to monitor.
 -   You can reboot Power Probe by pressing button "B".
 <br>
-![PPBe basic connecion](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/ESM1014e_basic.png?raw=true)
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/ESM1014e_basic.png?raw=true">
 
 **Software Environmental Setup**
 1. Get your Probe's connection details
@@ -111,11 +111,11 @@ As figure below:
 -   After what you have done in [Prepare the Device](#preparethedevice), 
     you should find a new device is already provisioned in your Azure IoT Central App automatically.
 <br>
-![Provisioned](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/PPB_Provisioned.png?raw=true)
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/PPB_Provisioned.png?raw=true">
 
 -   A sample view is as below:
 <br>
-![View](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/PPB_View.png?raw=true)
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/PPB_View.png?raw=true">
 
 -   Use this [Quickstart: Add a simulated device to your IoT Central application](https://docs.microsoft.com/en-us/azure/iot-central/core/quick-create-simulated-device) 
     doc as an example to try Power Probe in your Azure IoT Central App.
