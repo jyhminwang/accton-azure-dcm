@@ -70,7 +70,7 @@ As figure below:
 -   Connect Probe's Volt.Line1/Volt.Neutral to the L/N of the power cable respectively. The power cable supplies the load we plan to monitor.
 -   You can reboot Power Probe by pressing button "B".
 <br>
-![PPBe basic connecion](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/png/ESM1014e_basic.png?raw=true)
+![PPBe basic connecion](https://raw.githubusercontent.com/jyhminwang/accton-azure-dcm/master/ESM1014e/png/ESM1014e_basic.png)
 
 **Software Environmental Setup**
 1. Get your Probe's connection details
