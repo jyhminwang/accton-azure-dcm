@@ -88,7 +88,7 @@ As figure below:
     Note down the responsed "device connection key"(Symmetric key).
     Say it *"Device_SSS"* for example.
 
-2. Set your ESM1014 Power Probe's connection details on SLe111GW gateway Web user interface
+2. Set your ESM1014 Power Probe's connection details on SLE111GW gateway Web user interface
 -   Launch a web browser on you PC which is connected to LAN port of this gateway.
 -   Browse to 192.168.80.1, it is the default IP of SLE111GW gateway. You should see a web page as below.
 -   Click "Smart Home" => "Configure PowerProbe".
