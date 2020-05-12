@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿---
+---
 platform: FreeRTOS
 device: ESM1014e Power Probe
 language: c
@@ -33,10 +33,13 @@ IoT Plug and Play will be open to the community by way of a definition language 
 
 ESM1014e is an electric power monitor with Ethernet connectivity. 
 It offers the measurement capabilities required to monitor the power consumption of the interested main/branch circuit. 
-(e.g. Lighting, Air conditioning or Power outlet circuits……etc.). 
+(e.g. Lighting, Air conditioning or Power outlet circuits...etc.). 
 ESM1014e can report energy in high data rate, so it can also used to monitor energy ripple.
 
+This document can also be found on [ESM1014e_GettingStarted.md](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/ESM1014e_GettingStarted.md).
+
 <a name="Prerequisites"></a>
+
 # Prerequisites
 
 You should have the following items ready before beginning the process: 
