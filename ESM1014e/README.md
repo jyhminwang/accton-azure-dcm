@@ -36,7 +36,7 @@ It offers the measurement capabilities required to monitor the power consumption
 (e.g. Lighting, Air conditioning or Power outlet circuits...etc.). 
 ESM1014e can report energy in high data rate, so it can also used to monitor energy ripple.
 
-This document can also be found on [ESM1014e_GettingStarted.md](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/ESM1014e_GettingStarted.md).
+This document can also be found on [ESM1014e_GettingStarted.md](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014e/README.md).
 
 <a name="Prerequisites"></a>
 
