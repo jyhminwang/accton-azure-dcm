@@ -29,7 +29,7 @@ This document describes how to connect ESM1014 to Azure IoT Central application 
 
 ESM1014 is a wireless (ZigBee) electric power monitor. It connects to Accton's IoT service controller (gateway). It offers the measurement capabilities required to monitor the power consumption of the interested main/branch circuit. (e.g. Lighting, Air conditioning or Power outlet circuits...etc.).
 
-This document can also be found on [ESM1014_GettingStarted.md](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/ESM1014_GettingStarted.md).
+This document can also be found on [ESM1014_GettingStarted.md](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/README.md).
 
 <a name="Prerequisites"></a>
 # Prerequisites
