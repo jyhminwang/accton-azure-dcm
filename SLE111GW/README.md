@@ -28,7 +28,7 @@ This document describes how to connect SLE111GW to Azure IoT Central application
 
 SLE111GW is a ZigBee HA IoT gateway. It manages Accton certified ZigBee devices. It routes commands and information between and ZigBee IoT devices to Azure IoT Cloud. Kinds of ZigBee HA profile devices are supported by this controller.
 
-This document can also be found on [SLE111GW_GettingStarted.md](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/SLE111GW_GettingStarted.md).
+This document can also be found on [SLE111GW_GettingStarted.md](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/README.md).
 
 <a name="Prerequisites"></a>
 # Prerequisites
