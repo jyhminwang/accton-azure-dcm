@@ -1,0 +1,246 @@
+{
+  "@id": "urn:accton:ESM1014:1",
+  "@type": "CapabilityModel",
+  "implements": [
+    {
+      "@id": "urn:accton:ESM1014:EnergyReport:1",
+      "@type": "InterfaceInstance",
+      "displayName": {
+        "en": "Energy Report Interface"
+      },
+      "name": "EnergyReport",
+      "schema": {
+        "@id": "urn:accton:PPB:EnergyReport:1",
+        "@type": "Interface",
+        "displayName": {
+          "en": "PPB Energy Report"
+        },
+        "contents": [
+          {
+            "@id": "urn:accton:PPB:EnergyReport:mac:1",
+            "@type": "Property",
+            "description": {
+              "en": "The MAC of the device."
+            },
+            "displayName": {
+              "en": "Device MAC"
+            },
+            "name": "mac",
+            "writable": false,
+            "schema": "string"
+          },
+          {
+            "@id": "urn:accton:PPB:EnergyReport:address:1",
+            "@type": "Property",
+            "description": {
+              "en": "IPv4 address or ZigBee short address"
+            },
+            "displayName": {
+              "en": "Net address"
+            },
+            "name": "address",
+            "writable": false,
+            "schema": "string"
+          },
+          {
+            "@id": "urn:accton:PPB:EnergyReport:timeStamp:1",
+            "@type": "Telemetry",
+            "description": {
+              "en": "The date and time of energy."
+            },
+            "displayName": {
+              "en": "Time stamp"
+            },
+            "name": "timeStamp",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:accton:PPB:EnergyReport:phaseId:1",
+            "@type": "Telemetry",
+            "description": {
+              "en": "The phase Id of reported energy. (1=A, 2=B, 3=C, 4=N)"
+            },
+            "displayName": {
+              "en": "Phase Id"
+            },
+            "name": "phaseId",
+            "schema": "integer"
+          },
+          {
+            "@id": "urn:accton:PPB:EnergyReport:current:1",
+            "@type": "Telemetry",
+            "description": {
+              "en": "The phase current."
+            },
+            "displayName": {
+              "en": "Current"
+            },
+            "name": "current",
+            "displayUnit": {
+              "en": "A"
+            },
+            "schema": "float"
+          },
+          {
+            "@id": "urn:accton:PPB:EnergyReport:voltage:1",
+            "@type": "Telemetry",
+            "description": {
+              "en": "The measured RMS voltage"
+            },
+            "displayName": {
+              "en": "Voltage"
+            },
+            "name": "voltage",
+            "displayUnit": {
+              "en": "V"
+            },
+            "schema": "float"
+          },
+          {
+            "@id": "urn:accton:PPB:EnergyReport:energyReportRequest:1",
+            "@type": "Command",
+            "commandType": "synchronous",
+            "request": {
+              "@id": "urn:accton:PPB:EnergyReport:energyReportRequest:phaseId:1",
+              "@type": "SchemaField",
+              "name": "phaseId",
+              "schema": "integer"
+            },
+            "response": {
+              "@id": "urn:accton:PPB:EnergyReport:energyReportRequest:energyReportResponse:1",
+              "@type": "SchemaField",
+              "name": "energyReportResponse",
+              "schema": "string"
+            },
+            "description": {
+              "en": "This command will request an immediate energy report."
+            },
+            "name": "energyReportRequest"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "urn:accton:ESM1014:deviceInfo:1",
+      "@type": "InterfaceInstance",
+      "name": "deviceInfo",
+      "schema": {
+        "@id": "urn:azureiot:DeviceManagement:DeviceInformation:1",
+        "@type": "Interface",
+        "displayName": {
+          "en": "Device Information"
+        },
+        "contents": [
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:manufacturer:1",
+            "@type": "Property",
+            "description": {
+              "en": "Company name of the device manufacturer. This could be the same as the name of the original equipment manufacturer (OEM). Ex. Contoso."
+            },
+            "displayName": {
+              "en": "Manufacturer"
+            },
+            "name": "manufacturer",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:model:1",
+            "@type": "Property",
+            "description": {
+              "en": "Device model name or ID. Ex. Surface Book 2."
+            },
+            "displayName": {
+              "en": "Device model"
+            },
+            "name": "model",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:swVersion:1",
+            "@type": "Property",
+            "description": {
+              "en": "Version of the software on your device. This could be the version of your firmware. Ex. 1.3.45"
+            },
+            "displayName": {
+              "en": "Software version"
+            },
+            "name": "swVersion",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:osName:1",
+            "@type": "Property",
+            "description": {
+              "en": "Name of the operating system on the device. Ex. Windows 10 IoT Core."
+            },
+            "displayName": {
+              "en": "Operating system name"
+            },
+            "name": "osName",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:processorArchitecture:1",
+            "@type": "Property",
+            "description": {
+              "en": "Architecture of the processor on the device. Ex. x64 or ARM."
+            },
+            "displayName": {
+              "en": "Processor architecture"
+            },
+            "name": "processorArchitecture",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:processorManufacturer:1",
+            "@type": "Property",
+            "description": {
+              "en": "Name of the manufacturer of the processor on the device. Ex. Intel."
+            },
+            "displayName": {
+              "en": "Processor manufacturer"
+            },
+            "name": "processorManufacturer",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:totalStorage:1",
+            "@type": "Property",
+            "description": {
+              "en": "Total available storage on the device in kilobytes. Ex. 2048000 kilobytes."
+            },
+            "displayName": {
+              "en": "Total storage"
+            },
+            "name": "totalStorage",
+            "displayUnit": {
+              "en": "kilobytes"
+            },
+            "schema": "long"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:totalMemory:1",
+            "@type": "Property",
+            "description": {
+              "en": "Total available memory on the device in kilobytes. Ex. 256000 kilobytes."
+            },
+            "displayName": {
+              "en": "Total memory"
+            },
+            "name": "totalMemory",
+            "displayUnit": {
+              "en": "kilobytes"
+            },
+            "schema": "long"
+          }
+        ]
+      }
+    }
+  ],
+  "displayName": {
+    "en": "Accton IoT PowerProbe"
+  },
+  "@context": [
+    "http://azureiot.com/v1/contexts/IoTModel.json"
+  ]
+}
