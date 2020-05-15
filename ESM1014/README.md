@@ -40,9 +40,10 @@ You should have the following items ready before beginning the process:
 -   [Azure IoT Central App](https://docs.microsoft.com/en-us/azure/iot-central/core/overview-iot-central)
 -   [dps-keygen](https://github.com/Azure/dps-keygen)
 -   [A SLE111GW ZigBee gateway](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/SLE111GW_GettingStarted.md)
+-   Accton ESM1014 Power Probe
 -   Provide Network connectivity supported by the SLE111GW gateway
 
-**Note:** Azure IoT plug and play code is preinstalled in this device. Follow instrunctions in [Prepare the device](#preparethedevice) to setup device registration ID, ID scope, and the symmetric key.
+**Note:** Azure IoT plug and play code is preinstalled in this device. Follow instructions in [Prepare the device](#preparethedevice) to setup device registration ID, ID scope, and the symmetric key.
 
 <a name="Create_AICA"></a>
 # Create Azure IoT Central application
@@ -51,7 +52,12 @@ You should have your [IoT Central App](https://apps.azureiotcentral.com/) that t
 <a name="DeviceConnectionDetails"></a>
 # Device Connection Details
 Login to your Azure IoT Central App with a privileged account. Select the Administration tab , and then select "Device connection". Note down the "ID Scope".
-Select "View Keys" somewhere below "ID scope", note down the "Primary key"(master key) as well.
+
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DC_IDScope.png?raw=true">
+
+Click "View Keys" somewhere below "ID scope", note down the "Primary key"(master key) as well.
+
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DC_Keys.png?raw=true">
 
 <a name="preparethedevice"></a>
 # Prepare the Device.
@@ -61,7 +67,7 @@ Select "View Keys" somewhere below "ID scope", note down the "Primary key"(maste
 As figure below:
 1. Prepare SLE111GW gateway
 -   Connect ethernet WAN to internet, ethernet LAN to PC, and the power adapter.
--   You can also refer to [SLE111GW Getting Started](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/SLE111GW_GettingStarted.md) for more.
+-   You can also refer to [SLE111GW Getting Started](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/README.md) for more.
 
 2. Prepare ESM1014 Power Probe
 -   Connect Current Transformer to Probe's CT.L1+/CT.L1-. Please pay attention to the direction of current flow. It should be marked on the current transformer.
@@ -70,7 +76,7 @@ As figure below:
 3. Pairing
 -	Pressing button "T" on SLE111GW gateway.
 -	Pressing button "A" on ESM1014 Power Probe for 5 seconds.
--	The status LED on ESM1014 Power Probe becomes green after paired successfully.
+-	The status LED on ESM1014 Power Probe will be green after paired successfully.
 
 <img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/png/ESM1014_basic.png?raw=true">
 
@@ -101,11 +107,27 @@ As figure below:
 <a name="IntegrationwithIoTCentral"></a>
 # Integration with IoT Central
 
--   After what you have finished all hardware and software setup in [Prepare the Device](#preparethedevice),  you should find a new device is already provisioned in your Azure IoT Central App automatically.
+-   Download the device template file, [Accton ESM1014 PowerProbe.json](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/Accton%20ESM1014%20PowerProbe.json)
 
-<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/png/PPB_View.png?raw=true">
+-   Create a new custom device template, choose "IoT Device".
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DT_Import1_IoTDev.png?raw=true">
+
+-   DO NOT check "Gateway device".
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DT_Import2_NoGWDev.png?raw=true">
+
+-   Give the device template a proper name, for below example, "Accton ESM1014".
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/png/AICA_DT_PPB_Import3_Name.png?raw=true">
+
+-   Import device capability model  (i.e. the saved template file),  [Accton ESM1014 PowerProbe.json](https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/Accton%20ESM1014%20PowerProbe.json). And then "Publish".
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/png/AICA_DT_PPB_Import4_CM.png?raw=true">
+
+-   Since you have finished all hardware and software setup in [Prepare the Device](#preparethedevice), restart your device.  You should find this device is provisioned in your Azure IoT Central App automatically.
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/ESM1014/png/AICA_DT_PPB_Provisioned.png?raw=true">
+
+-   Use this [Quickstart: Add a simulated device to your IoT Central application](https://docs.microsoft.com/en-us/azure/iot-central/core/quick-create-simulated-device) doc as an example to try Power Probe in your Azure IoT Central App.
 
 <a name="AdditionalLinks"></a>
+
 # Additional Links
 
 Please refer to the below link for additional information for Plug and Play 
