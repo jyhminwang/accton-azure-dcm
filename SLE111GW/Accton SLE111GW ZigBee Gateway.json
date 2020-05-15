@@ -1,0 +1,211 @@
+{
+  "@id": "urn:accton:SLE111GW:1",
+  "@type": "CapabilityModel",
+  "implements": [
+    {
+      "@id": "urn:accton:SLE111GW:ZC:1",
+      "@type": "InterfaceInstance",
+      "displayName": {
+        "en": "ZigBee Coordinator"
+      },
+      "name": "ZC",
+      "schema": {
+        "@id": "urn:accton:GW:ZC:1",
+        "@type": "Interface",
+        "displayName": {
+          "en": "ZB Coordinator"
+        },
+        "contents": [
+          {
+            "@id": "urn:accton:GW:ZC:ZcMac:1",
+            "@type": "Property",
+            "description": {
+              "en": "MAC of ZigBee Coordinator"
+            },
+            "displayName": {
+              "en": "ZC MAC"
+            },
+            "name": "ZcMac",
+            "writable": false,
+            "schema": "string"
+          },
+          {
+            "@id": "urn:accton:GW:ZC:PanId:1",
+            "@type": "Property",
+            "displayName": {
+              "en": "Operation PAN Id"
+            },
+            "name": "PanId",
+            "writable": false,
+            "schema": "string"
+          },
+          {
+            "@id": "urn:accton:GW:ZC:ZcNc:1",
+            "@type": "Telemetry",
+            "comment": "Number of Remaining ZigBee Children",
+            "name": "ZcNc",
+            "schema": "integer"
+          },
+          {
+            "@id": "urn:accton:GW:ZC:ZcJoinOpen:1",
+            "@type": "Command",
+            "commandType": "synchronous",
+            "request": {
+              "@id": "urn:accton:GW:ZC:ZcJoinOpen:interval:1",
+              "@type": "SchemaField",
+              "name": "interval",
+              "schema": "integer"
+            },
+            "response": {
+              "@id": "urn:accton:GW:ZC:ZcJoinOpen:description:1",
+              "@type": "SchemaField",
+              "name": "description",
+              "schema": "string"
+            },
+            "description": {
+              "en": "ZC begins to accept joining"
+            },
+            "name": "ZcJoinOpen"
+          },
+          {
+            "@id": "urn:accton:GW:ZC:ZcJoinStop:1",
+            "@type": "Command",
+            "commandType": "synchronous",
+            "response": {
+              "@id": "urn:accton:GW:ZC:ZcJoinStop:description:1",
+              "@type": "SchemaField",
+              "name": "description",
+              "schema": "string"
+            },
+            "description": {
+              "en": "ZC stop accept joining immediately"
+            },
+            "name": "ZcJoinStop"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "urn:accton:SLE111GW:deviceInfo:1",
+      "@type": "InterfaceInstance",
+      "name": "deviceInfo",
+      "schema": {
+        "@id": "urn:azureiot:DeviceManagement:DeviceInformation:1",
+        "@type": "Interface",
+        "displayName": {
+          "en": "Device Information"
+        },
+        "contents": [
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:manufacturer:1",
+            "@type": "Property",
+            "description": {
+              "en": "Company name of the device manufacturer. This could be the same as the name of the original equipment manufacturer (OEM). Ex. Contoso."
+            },
+            "displayName": {
+              "en": "Manufacturer"
+            },
+            "name": "manufacturer",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:model:1",
+            "@type": "Property",
+            "description": {
+              "en": "Device model name or ID. Ex. Surface Book 2."
+            },
+            "displayName": {
+              "en": "Device model"
+            },
+            "name": "model",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:swVersion:1",
+            "@type": "Property",
+            "description": {
+              "en": "Version of the software on your device. This could be the version of your firmware. Ex. 1.3.45"
+            },
+            "displayName": {
+              "en": "Software version"
+            },
+            "name": "swVersion",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:osName:1",
+            "@type": "Property",
+            "description": {
+              "en": "Name of the operating system on the device. Ex. Windows 10 IoT Core."
+            },
+            "displayName": {
+              "en": "Operating system name"
+            },
+            "name": "osName",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:processorArchitecture:1",
+            "@type": "Property",
+            "description": {
+              "en": "Architecture of the processor on the device. Ex. x64 or ARM."
+            },
+            "displayName": {
+              "en": "Processor architecture"
+            },
+            "name": "processorArchitecture",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:processorManufacturer:1",
+            "@type": "Property",
+            "description": {
+              "en": "Name of the manufacturer of the processor on the device. Ex. Intel."
+            },
+            "displayName": {
+              "en": "Processor manufacturer"
+            },
+            "name": "processorManufacturer",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:totalStorage:1",
+            "@type": "Property",
+            "description": {
+              "en": "Total available storage on the device in kilobytes. Ex. 2048000 kilobytes."
+            },
+            "displayName": {
+              "en": "Total storage"
+            },
+            "name": "totalStorage",
+            "displayUnit": {
+              "en": "kilobytes"
+            },
+            "schema": "long"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:totalMemory:1",
+            "@type": "Property",
+            "description": {
+              "en": "Total available memory on the device in kilobytes. Ex. 256000 kilobytes."
+            },
+            "displayName": {
+              "en": "Total memory"
+            },
+            "name": "totalMemory",
+            "displayUnit": {
+              "en": "kilobytes"
+            },
+            "schema": "long"
+          }
+        ]
+      }
+    }
+  ],
+  "displayName": {
+    "en": "Accton SLE111GW ZigBee Gateway"
+  },
+  "@context": [
+    "http://azureiot.com/v1/contexts/IoTModel.json"
+  ]
+}
