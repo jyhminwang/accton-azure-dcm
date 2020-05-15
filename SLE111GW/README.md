@@ -1,5 +1,5 @@
 ---
-SLEplatform: Linux
+platform: Linux
 device: SLE111GW Service Controller
 language: c
 ---
