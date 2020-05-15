@@ -38,19 +38,25 @@ You should have the following items ready before beginning the process:
 -   [Azure Account](https://portal.azure.com)
 -   [Azure IoT Central App](https://docs.microsoft.com/en-us/azure/iot-central/core/overview-iot-central)
 -   [dps-keygen](https://github.com/Azure/dps-keygen)
+-   Accton SLE111GW service controller
 -   Provide Network connectivity (LAN) supported by the device
 
-**Note:** Azure IoT plug and play code is preinstalled in this device. Follow instrunctions in [Prepare the device](#preparethedevice) 
-to setup device registration ID, ID scope, and the symmetric key.
+**Note:** Azure IoT plug and play code is preinstalled in this device. Follow instructions in [Prepare the device](#preparethedevice) to setup device registration ID, ID scope, and the symmetric key.
 
 <a name="Create_AICA"></a>
+
 # Create Azure IoT Central application
 You should have your [IoT Central App](https://apps.azureiotcentral.com/) that the plug and play device can connect to.
 
 <a name="DeviceConnectionDetails"></a>
 # Device Connection Details
 Login to your Azure IoT Central App with a privileged account. Select the Administration tab , and then select "Device connection". Note down the "ID Scope".
-Select "View Keys" somewhere below "ID scope", note down the "Primary key"(master key) as well.
+
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DC_IDScope.png?raw=true">
+
+Click "View Keys" somewhere below "ID scope", note down the "Primary key"(master key) as well.
+
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DC_Keys.png?raw=true">
 
 <a name="preparethedevice"></a>
 # Prepare the Device.
@@ -59,7 +65,7 @@ Select "View Keys" somewhere below "ID scope", note down the "Primary key"(maste
 
 As figure below:
 -   Connect WAN port to internet.
--   Connect LAN to you configuring PC.
+-   Connect LAN to your configuring PC.
 -   Connect Power adapter and power on.
 -   Onboard LCD will display current date and time after connecting to internet. 
 
@@ -68,15 +74,15 @@ As figure below:
 **Software Environmental Setup**
 
 1. Get your Gateway's connection details
--   You should already have your "Scope ID"(ID scope) and "Primary key"(master key) in [Device Connection Details](#DeviceConnectionDetails).
+-   You should already have your "Scope ID" (ID scope) and "Primary key" (master key) in [Device Connection Details](#DeviceConnectionDetails).
     Say them *"Scope_SSS"* and *"Master_PPP"* for example.
--   Determine your "Device ID"(registration ID).
-    You can assign any string which is unique in your ID scope.
+-   Determine your "Device ID" (registration ID).
+    You can assign any string which is unique in your Azure IoT Central App ID scope.
     Example here it is named *"SLE111GW_00:11:22:33:44:55"* where 00:11:22:33:44:55 is its ethernet MAC.
 -   Use [dps-keygen](https://github.com/Azure/dps-keygen) to get this Gateway's corresponding "Symmetric key"
 
         dps-keygen -di:SLE111GW_00:11:22:33:44:55 -mk:Master_PPP
-    Note down the responsed "device connection key"(Symmetric key).
+    Note down the result "device connection key" (i.e. Symmetric key).
     Say it *"Device_SSS"* for example.
 
 2. Set your connection details in gateway
@@ -90,11 +96,31 @@ As figure below:
 <img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/SLE111GW_Web.png?raw=true">
 
 <a name="IntegrationwithIoTCentral"></a>
+
 # Integration with IoT Central
 
--   After what you have finished all hardware and software setup in [Prepare the Device](#preparethedevice),  you should find a new device is already provisioned in your Azure IoT Central App automatically.
+**Import a new device template to you Azure IoT Central App**
 
-<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/SLE111GW_AICAbout.png?raw=true">
+-   Download the device template file, [Accton SLE111GW ZigBee Gateway.json](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/Accton%20SLE111GW%20ZigBee%20Gateway.json)
+
+-   Create a new custom device template, choose "IoT Device".
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DT_Import1_IoTDev.png?raw=true">
+
+-   DO NOT check "Gateway device".
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DT_Import2_NoGWDev.png?raw=true">
+
+-   Give the device template a proper name, for below example, "Accton SLE111GW".
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DT_Import3_Name.png?raw=true">
+
+-   Import device capability model  (i.e. the saved template file),  [Accton SLE111GW ZigBee Gateway.json](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/Accton%20SLE111GW%20ZigBee%20Gateway.json).
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DT_Import4_CM.png?raw=true">
+
+-   Publish this device template
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_DT_Import5_Publish.png?raw=true">
+
+-   Since you have finished all hardware and software setup in [Prepare the Device](#preparethedevice), restart your device.  You should find this device is provisioned in your Azure IoT Central App automatically.
+
+<img src="https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/png/AICA_D_Provisioned.png?raw=true">
 
 <a name="AdditionalLinks"></a>
 # Additional Links
