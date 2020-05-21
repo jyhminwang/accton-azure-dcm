@@ -39,7 +39,7 @@ You should have the following items ready before beginning the process:
 -   [Azure Account](https://portal.azure.com)
 -   [Azure IoT Central App](https://docs.microsoft.com/en-us/azure/iot-central/core/overview-iot-central)
 -   [dps-keygen](https://github.com/Azure/dps-keygen)
--   [A SLE111GW ZigBee gateway](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/SLE111GW_GettingStarted.md)
+-   [A SLE111GW ZigBee gateway](https://github.com/jyhminwang/accton-azure-dcm/blob/master/SLE111GW/README.md)
 -   Accton ESM1014 Power Probe
 -   Provide Network connectivity supported by the SLE111GW gateway
 
